@@ -22,13 +22,13 @@ import app from './app.js'
 //     }
 // })()
 
-DbConnect()
+DbConnect() // this method is async so it will return a promise
 .then(()=>{
     app.listen(process.env.PORT, ()=>{
         console.log(`Server is running on port ${process.env.PORT}`)
     })
 })
 .catch((err)=>{
-    console.log("MongoDB Connection failed!! : ",err);
+    console.log("MongoDB Co nnection failed!! : ",err);
     process.exit(1);
 })
